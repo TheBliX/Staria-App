@@ -1,0 +1,99 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Staria.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        
+        d:DesignWidth="400" d:DesignHeight="400"
+        Width="400" Height="400"
+        
+        x:Class="Staria.Views.LoginWindow"
+        x:DataType="vm:LoginWindowViewModel"
+        
+        TransparencyLevelHint="AcrylicBlur"
+        Background="#80000000"
+        ExtendClientAreaToDecorationsHint="True"
+        
+        CanResize="False"
+        
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Staria">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:LoginWindowViewModel/>
+    </Design.DataContext>
+    
+    <StackPanel HorizontalAlignment="Center">
+        <!-- Staria text -->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top"
+                   Margin="30"
+                   FontSize="80"
+                   Foreground="White">
+            STARIA
+        </TextBlock>
+        
+        <!-- Name input -->
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                   FontSize="20"
+                   Foreground="White">
+            Enter your name
+        </TextBlock>
+        <TextBox VerticalAlignment="Center"
+                 FontSize="15"
+                 Foreground="DarkGray"
+                 AcceptsReturn="False"
+                 AcceptsTab="False"
+                 x:Name="NameTextBox">
+            Your name
+        </TextBox>
+        
+        <!-- Password input -->
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center"
+                   FontSize="20"
+                   Foreground="White">
+            Enter your password
+        </TextBlock>
+        <TextBox VerticalAlignment="Center"
+                 FontSize="15"
+                 Foreground="DarkGray"
+                 AcceptsReturn="False"
+                 AcceptsTab="False"
+                 x:Name="PasswordTextBox">
+            Your password
+        </TextBox>
+        
+        <!-- Type of setting up -->
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <RadioButton HorizontalAlignment="Center" VerticalAlignment="Center"
+                         Margin="5"
+                         Padding="5"
+                         Foreground="White"
+                         IsChecked="True"
+                         x:Name="SignInButton">
+                Sign In
+            </RadioButton>
+            <RadioButton HorizontalAlignment="Center" VerticalAlignment="Center"
+                         Margin="5"
+                         Padding="5"
+                         Foreground="White"
+                         IsChecked="False"
+                         x:Name="SignUpButton">
+                Sign Up
+            </RadioButton>
+        </WrapPanel>
+        
+        <!-- Button to start -->
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center"
+                Margin="20"
+                Padding="10"
+                Background="Gray"
+                Foreground="White"
+                Click="LetsStartButtonOnClick">
+            Let's go!
+        </Button>
+    </StackPanel>
+
+</Window>
